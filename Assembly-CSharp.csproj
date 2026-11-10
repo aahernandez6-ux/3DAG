@@ -43,6 +43,7 @@
     <UnityVersion>6000.5.7f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\UnityEditors\6000.5.7f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\UnityEditors\6000.5.7f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\UnityEditors\6000.5.7f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -61,6 +62,7 @@
     <Compile Include="Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
     <Compile Include="Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
     <Compile Include="Assets\ParticleSystems\Scripts\ObjectResetter.cs" />
+    <Compile Include="Assets\Scitps\Rot Op.cs" />
     <Compile Include="Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
     <Compile Include="Assets\Scitps\Player Colllsions.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Assets\ParticleSystems\Scripts\Hose.cs" />
     <Compile Include="Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
     <Compile Include="Assets\ParticleSystems\Scripts\FireLight.cs" />
+    <Compile Include="Assets\Scitps\BatteryCoollet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\OptiWater\Demo\Fantasy Skybox FREE\Readme.txt" />
