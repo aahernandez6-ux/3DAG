@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-public class BatteryCoollet : MonoBehaviour
+public class PickupCoollet : MonoBehaviour
 {
     //Battery Coollet logic
 
@@ -45,19 +45,20 @@ public class BatteryCoollet : MonoBehaviour
         {
             hud.texture = pickpu2Tex;
 
-            hud.enabled = true;
         }
         else if (pickAmount == 3)
         {
             hud.texture = pickpu3Tex;
 
-            hud.enabled = true;
         }
         else if (pickAmount == 4)
         {
             hud.texture = pickpu4Tex;
 
-            hud.enabled = true;
+        }
+        else
+        {
+            hud.texture = pickpu0Tex;
         }
     }
 }  

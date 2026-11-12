@@ -69,8 +69,8 @@
     <Compile Include="Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
     <Compile Include="Assets\ParticleSystems\Scripts\Hose.cs" />
     <Compile Include="Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
+    <Compile Include="Assets\Scitps\PickupCoollet.cs" />
     <Compile Include="Assets\ParticleSystems\Scripts\FireLight.cs" />
-    <Compile Include="Assets\Scitps\BatteryCoollet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\OptiWater\Demo\Fantasy Skybox FREE\Readme.txt" />

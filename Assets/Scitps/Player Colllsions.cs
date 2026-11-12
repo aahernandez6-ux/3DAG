@@ -19,7 +19,10 @@ public class PlayerColllsions : MonoBehaviour
     private new AudioSource audio; // will hold the AudioSource Component
 
     private bool doorIsOpen = false; //To determine current 
-     
+
+    //Battery sound
+    [SerializeField] private AudioClip pickupCollectSound;
+
     // Start is colled once before the first execution of Update after the MonoBehaviour
     void Start()
     {
@@ -53,10 +56,12 @@ public class PlayerColllsions : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         //Check if th player hits an object with the houseDoortag
-        if(hit.gameObject.CompareTag("houseDoor"))
+        if(hit.gameObject.CompareTag("houseDoor")&& PickupCoollet.pickAmount >= 4)
         {
             OpenDoor(); // This calls the custom method below
             print("Hit the door!");
+
+            PickupCoollet.hud.enabled = false;
         }
     }
 
@@ -90,4 +95,19 @@ public class PlayerColllsions : MonoBehaviour
         //Set Animetor parameter
         doorAnimor.SetBool("doorOpen", false);
     }
+
+    //Pickup collision 
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.CompareTag("pickup"))
+        {
+            PickupCoollet.pickAmount++;
+
+            audio.PlayOneShot(pickupCollectSound);
+
+            Destroy(coll.gameObject);
+        }
+    }
+
 }
+

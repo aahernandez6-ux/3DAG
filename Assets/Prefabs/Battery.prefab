@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4216859302048453862, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 74.101326
+      value: 13.989162
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6735781
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 154.95
+      value: 79.48966
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Battery
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
+      propertyPath: m_TagString
+      value: pickup
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5716681864270162303, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
     m_RemovedGameObjects: []
@@ -67,20 +71,30 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8635578938614588878}
-    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2897183145007944499}
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2703653439370974929}
+      addedObject: {fileID: 4260705363451308157}
   m_SourcePrefab: {fileID: 100100000, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
 --- !u!1 &8936942989754250127 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: bbe0081cfb7214488bcefb4e6214152d, type: 3}
   m_PrefabInstance: {fileID: 1091994657421224582}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &8635578938614588878
+--- !u!114 &2897183145007944499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936942989754250127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89b18778016a064bbdd9d024241d7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotOp
+  rotationSpeed: 200
+--- !u!136 &4260705363451308157
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,37 +113,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.8061664
-  m_Height: 10.238037
+  m_Radius: 0.18061663
+  m_Height: 1.0238037
   m_Direction: 1
-  m_Center: {x: 0.00000023841858, y: 4.95166, z: -0.00000029802322}
---- !u!114 &2897183145007944499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8936942989754250127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c89b18778016a064bbdd9d024241d7c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RotOp
-  rotationSpeed: 200
---- !u!114 &2703653439370974929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8936942989754250127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52976f52d88751a49929d6f93dcb7a62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatteryCoollet
-  pickpu1Tex: {fileID: 0}
-  pickpu2Tex: {fileID: 0}
-  pickpu3Tex: {fileID: 0}
-  pickpu4Tex: {fileID: 0}
-  pickpu0Tex: {fileID: 0}
+  m_Center: {x: 0.000000022351742, y: 0.49516606, z: -0.000000029802322}
