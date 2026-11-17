@@ -1,4 +1,5 @@
 using UnityEngine;
+using Unity.Collections;
 
 public class PlayerColllsions : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class PlayerColllsions : MonoBehaviour
 
     //Battery sound
     [SerializeField] private AudioClip pickupCollectSound;
+
+    // Spawn point
+    [SerializeField] private Transform spawnPoint; 
+
+    private bool isRspawning = false;
 
     // Start is colled once before the first execution of Update after the MonoBehaviour
     void Start()
@@ -56,13 +62,23 @@ public class PlayerColllsions : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         //Check if th player hits an object with the houseDoortag
-        if(hit.gameObject.CompareTag("houseDoor")&& PickupCoollet.pickAmount >= 4)
+        if(hit.gameObject.CompareTag("houseDoor") && PickupCoollet.pickAmount >= 4)
         {
             OpenDoor(); // This calls the custom method below
             print("Hit the door!");
 
             PickupCoollet.hud.enabled = false;
         }
+        else if (hit.gameObject.CompareTag("houseDoor") && PickupCoollet.pickAmount >= 4)
+        {
+            PickupCoollet.hud.enabled = true;
+
+            TextHints.messsage = "This door needed poer to open...";
+            
+            TextHints.textOn = true;
+        }
+        
+       
     }
 
     //Custom open door method
@@ -109,5 +125,6 @@ public class PlayerColllsions : MonoBehaviour
         }
     }
 
+    
 }
 
