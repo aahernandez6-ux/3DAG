@@ -60,5 +60,4 @@ public class PickupCoollet : MonoBehaviour
         {
             hud.texture = pickpu0Tex;
         }
-    }
-}  
+     }  

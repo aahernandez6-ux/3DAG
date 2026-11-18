@@ -40,6 +40,7 @@ public class TextHints : MonoBehaviour
             timer += Time.deltaTime;
 
         }
+
         if(timer >= textOnTime)
         {
             textOn = false;
