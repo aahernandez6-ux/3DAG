@@ -1,5 +1,5 @@
 using UnityEngine;
-using Unity.Collections;
+using System.Collections;
 
 public class PlayerColllsions : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class PlayerColllsions : MonoBehaviour
     // Spawn point
     [SerializeField] private Transform spawnPoint; 
 
-    private bool isRspawning = false;
+    private bool isRespawning = false;
 
     // Start is colled once before the first execution of Update after the MonoBehaviour
     void Start()
@@ -65,20 +65,31 @@ public class PlayerColllsions : MonoBehaviour
         if(hit.gameObject.CompareTag("houseDoor") && PickupCoollet.pickAmount >= 4)
         {
             OpenDoor(); // This calls the custom method below
-            print("Hit the door!");
+            // print("Hit the door!");
 
             PickupCoollet.hud.enabled = false;
         }
-        else if (hit.gameObject.CompareTag("houseDoor") && PickupCoollet.pickAmount >= 4)
+        else if (hit.gameObject.CompareTag("houseDoor") && PickupCoollet.pickAmount < 4)
         {
             PickupCoollet.hud.enabled = true;
 
-            TextHints.messsage = "This door needed poer to open...";
+            TextHints.messsage = "This door needed power to open...";
             
             TextHints.textOn = true;
         }
-        
-       
+
+        if (hit.gameObject.CompareTag("water") && !isRespawning)
+
+        {
+            isRespawning = true;
+
+            TextHints.messsage = "Can't go there";
+
+            TextHints.textOn = true;
+
+            StartCoroutine(Respawn(2.0f)); // 2.0 is a 2 second delay
+            Time.timeScale = 0;
+        }
     }
 
     //Custom open door method
@@ -124,7 +135,19 @@ public class PlayerColllsions : MonoBehaviour
             Destroy(coll.gameObject);
         }
     }
+     
+    private IEnumerator Respawn(float delay)
 
-    
+    {
+        yield return new WaitForSeconds(delay);
+
+        transform.position = spawnPoint.position;
+
+        isRespawning = false;
+
+        Time.timeScale = 1;
+
+    }
+
 }
 
