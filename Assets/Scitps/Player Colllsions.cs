@@ -139,7 +139,7 @@ public class PlayerColllsions : MonoBehaviour
     private IEnumerator Respawn(float delay)
 
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
 
         transform.position = spawnPoint.position;
 
